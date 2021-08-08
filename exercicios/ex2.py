@@ -14,4 +14,3 @@ imc = peso / altura ** 2
 # resultado
 print(50*"-")
 print(f'{nome} nasceu em {an}, seu IMC e {imc:.2f}')
-teste
