@@ -35,11 +35,35 @@ def func2(*args):
 func2(1, 2, 3, 4, 5)
 
 print()
-print(f'{" SOLUÇÃO ":=^25}')  # --------------------------
+print(f'{" SOLUÇÃO *args ":=^25}')  # --------------------------
 print()
 
 def sol(*args):
     print(args)
 
 lista = [1, 2, 3, 4, 5, 6]
+lista2 = [40, 50, 60]
 sol(*lista, 10, 20, 30)  # enviar uma lista descompactada
+sol(*lista, *lista2)
+
+print()
+print(f'{" SOLUÇÃO *kwargs ":=^25}')  # --------------------------
+print()
+
+def sol(*args, **kwargs): # argumentos com palavras chave
+    print(args)
+    print(kwargs)
+    print(kwargs['nome'], kwargs['snome'])  # se variavel nao estiver definida vai da erro
+    # verifica se foi passado arg idade
+    idade =kwargs.get('idade')
+    print(idade)  # mostrara None se nao estiver definida
+
+    if idade is not None:
+        print(idade)
+    else:
+        print('Idade não existe.')
+
+lista = [1, 2, 3, 4, 5, 6]
+lista2 = [40, 50, 60]
+
+sol(*lista, *lista2, nome='rubens', snome='adriano')
